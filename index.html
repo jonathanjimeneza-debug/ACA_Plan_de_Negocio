@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description"
+        content="Cycle Drop Express: entregas locales rápidas, económicas y ecológicas con bicimensajeros de tu barrio.">
+    <title>Cycle Drop Express | Entregas rápidas y ecológicas en tu barrio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="progress"></div>
+    <div id="toast" role="alert"><i class="fa-solid fa-circle-check"></i>
+        <div><strong>¡Registro exitoso!</strong><span id="toastMsg"></span></div>
+    </div>
+
+    <header id="header">
+        <div class="wrap nav">
+            <a href="#inicio" class="logo"><i class="fa-solid fa-bicycle"></i> Cycle Drop <b>Express</b></a>
+            <nav id="menu"><a href="#beneficios">Beneficios</a><a href="#comunidad">Comunidad</a><a
+                    href="#resultados">Resultados</a><a href="#problema">Problema</a><a href="#como">Cómo funciona</a><a
+                    href="#cliente">Cliente</a><a href="#tecnologia">Tecnología</a><a href="#precios">Precios</a><a
+                    href="#faq">FAQ</a></nav>
+            <a href="#registro" class="btn btn-em btn-sm">Acceso anticipado</a>
+            <button id="burger" aria-label="Menú"><i class="fa-solid fa-bars"></i></button>
+        </div>
+    </header>
+
+    <section id="inicio" class="hero">
+        <div class="wrap hero-grid">
+            <div class="reveal">
+                <span class="pill"><i class="fa-solid fa-leaf"></i> App móvil de entregas locales y ecológicas</span>
+                <h1>Recibe tus pedidos del barrio en minutos, sin contaminar</h1>
+                <p class="lead">Conectamos a vecinos y pequeños comercios con bicimensajeros de la zona. Una app con
+                    Inteligencia Artificial y Cloud Computing asigna al mensajero más cercano y te deja seguir tu pedido
+                    en vivo.</p>
+                <div class="stats">
+                    <div><b data-count="30">0</b><span>minutos o menos por entrega</span></div>
+                    <div><b data-count="0">0</b><span>emisiones de CO₂</span></div>
+                    <div><b data-count="24">0</b><span>horas de app disponible</span></div>
+                </div>
+                <div class="road"></div>
+            </div>
+            <div id="registro" class="card form-card reveal">
+                <h2>Reserva tu acceso anticipado</h2>
+                <p class="muted">Los primeros 100 reciben <strong class="em">3 entregas gratis + 30% de
+                        descuento</strong> el primer mes.</p>
+                <form id="regForm" novalidate>
+                    <label for="nombre">Nombre</label>
+                    <input id="nombre" type="text" placeholder="Carlos Mendoza" autocomplete="name">
+                    <label for="correo">Correo electrónico</label>
+                    <input id="correo" type="email" placeholder="carlos@correo.com" autocomplete="email">
+                    <p id="error" class="error"></p>
+                    <button class="btn btn-em btn-block" type="submit"><i class="fa-solid fa-bicycle"></i> Quiero mis 3
+                        entregas gratis</button>
+                    <small class="muted"><i class="fa-solid fa-lock"></i> Sin spam. Cancela cuando quieras.</small>
+                </form>
+            </div>
+        </div>
+    </section>
+    <section class="logos">
+        <div class="wrap"><span>Ideal para</span><b>Tiendas de
+                barrio</b><b>Panaderías</b><b>Farmacias</b><b>Restaurantes</b><b>Emprendimientos locales</b></div>
+    </section>
+    <section id="beneficios" class="section">
+        <div class="wrap">
+            <h2 class="title reveal">3 beneficios que sentirás desde tu primer pedido</h2>
+            <p class="sub reveal">Resultados concretos para tu día a día, no solo características de la app.</p>
+            <div class="grid3">
+                <article class="card reveal"><i class="fa-solid fa-bolt ic"></i>
+                    <h3>Recibe en 30 minutos</h3>
+                    <p>Esquiva el tráfico y recupera tu tiempo con entregas dentro de tu misma zona, hechas en
+                        bicicleta.</p>
+                </article>
+                <article class="card reveal"><i class="fa-solid fa-wallet ic em"></i>
+                    <h3>Ahorra en cada envío</h3>
+                    <p>Paga tarifas justas desde COP 4.900 y evita las comisiones elevadas de las apps tradicionales.
+                    </p>
+                </article>
+                <article class="card reveal"><i class="fa-solid fa-leaf ic"></i>
+                    <h3>Reduce tu huella a cero</h3>
+                    <p>Elige entregas sin emisiones de CO₂ y apoya el comercio y el empleo de tu propio barrio.</p>
+                </article>
+            </div>
+            <div class="incentive reveal"><i class="fa-solid fa-gift"></i>
+                <div>
+                    <h3>Incentivo de registro</h3>
+                    <p>Regístrate hoy y recibe <b>3 entregas gratis + 30% de descuento</b> en tu primer mes. Solo para
+                        los primeros 100 inscritos.</p>
+                </div><a href="#registro" class="btn btn-white">Reclamar mi bono</a>
+            </div>
+            <div class="card calc reveal">
+                <h3><i class="fa-solid fa-calculator"></i> Calcula el tiempo que recuperas</h3>
+                <label>Minutos que gastas por salir a hacer un mandado: <b id="minV">60</b></label>
+                <input type="range" id="min" min="15" max="120" step="15" value="60">
+                <label>Mandados por semana: <b id="clsV">3</b></label>
+                <input type="range" id="cls" min="1" max="6" value="3">
+                <p class="result">Recuperas <b id="hrs">3</b> horas por semana, unas <b id="yr">144</b> horas al año.
+                </p>
+            </div>
+        </div>
+    </section>
+    <section id="comunidad" class="section alt">
+        <div class="wrap">
+            <h2 class="title reveal">Prueba social: tu comunidad ya la está probando</h2>
+            <p class="sub reveal">Compartimos el enlace con amigos, familia, grupos de WhatsApp e Instagram.</p>
+            <div class="card urlbox reveal"><small>URL de la landing (simulada)</small>
+                <div class="urlrow"><code id="url">https://cycledrop-express.netlify.app</code><button
+                        class="btn btn-em btn-sm" id="copy"><i class="fa-solid fa-copy"></i> Copiar</button></div>
+                <div class="share"><a id="shWa" target="_blank" rel="noopener" class="btn btn-em btn-sm"><i
+                            class="fa-brands fa-whatsapp"></i> WhatsApp</a><a id="shIg"
+                        href="https://www.instagram.com/" target="_blank" rel="noopener" class="btn btn-out btn-sm"><i
+                            class="fa-brands fa-instagram"></i> Instagram</a><a id="shLi" target="_blank" rel="noopener"
+                        class="btn btn-out btn-sm"><i class="fa-brands fa-linkedin"></i> LinkedIn</a></div>
+            </div>
+            <div class="grid3">
+                <article class="card reveal"><i class="fa-brands fa-whatsapp ic em"></i>
+                    <h3>Grupos de WhatsApp</h3>
+                    <p>Envío a grupos de vecinos del barrio, compañeros de estudio y comerciantes, con un mensaje corto
+                        y el enlace.</p>
+                </article>
+                <article class="card reveal"><i class="fa-brands fa-instagram ic"></i>
+                    <h3>Instagram</h3>
+                    <p>Historias con captura de la landing y mensajes directos a emprendedores y tiendas de la zona.</p>
+                </article>
+                <article class="card reveal"><i class="fa-solid fa-heart ic em"></i>
+                    <h3>Amigos y familia</h3>
+                    <p>Mensaje personal pidiendo que la abran, dejen su correo y la reenvíen a sus contactos.</p>
+                </article>
+            </div>
+            <div class="slider reveal" id="slider">
+                <figure class="slide active">⭐⭐⭐⭐⭐<blockquote>"Pedí una entrega cerca y llegó en minutos. Cero
+                        complicaciones."</blockquote>
+                    <figcaption>Laura G. · Analista financiera</figcaption>
+                </figure>
+                <figure class="slide">⭐⭐⭐⭐⭐<blockquote>"Como dueño de tienda, me ahorro armar mi propio domicilio."
+                    </blockquote>
+                    <figcaption>Andrés P. · Comerciante de barrio</figcaption>
+                </figure>
+                <figure class="slide">⭐⭐⭐⭐<blockquote>"Me gusta que sea ecológico. Me gustaría poder programar
+                        entregas."</blockquote>
+                    <figcaption>Marcela R. · Project manager</figcaption>
+                </figure>
+                <div class="dots"></div>
+            </div>
+            <p class="center muted"><small>Testimonios de la muestra de validación académica.</small></p>
+        </div>
+    </section>
+    <section id="resultados" class="section dark">
+        <div class="wrap">
+            <h2 class="title reveal">Mide los resultados</h2>
+            <p class="sub reveal">Meta: resultados con mínimo 10 personas. Los contadores se actualizan con cada visita,
+                registro y feedback.</p>
+            <div class="metrics">
+                <div class="metric reveal"><i class="fa-solid fa-eye"></i><b id="r-vis">0</b><span>Visitaron la
+                        página</span></div>
+                <div class="metric reveal"><i class="fa-solid fa-envelope"></i><b id="r-mail">0</b><span>Dejaron su
+                        email</span></div>
+                <div class="metric reveal"><i class="fa-solid fa-comments"></i><b id="r-fb">0</b><span>Dieron
+                        feedback</span></div>
+                <div class="metric reveal"><i class="fa-solid fa-percent"></i><b id="r-conv">0%</b><span>Tasa de
+                        conversión</span></div>
+            </div>
+            <div class="goal">
+                <div class="bar"><i id="r-bar" style="width:0"></i></div><small id="r-goal"></small>
+            </div>
+            <div class="card fb reveal">
+                <h3><i class="fa-solid fa-wand-magic-sparkles"></i> Cuéntanos qué piensas (validación Mago de Oz)</h3>
+                <form id="fbForm" novalidate>
+                    <label>¿Cuánto pagarías por una entrega?</label><select id="f1">
+                        <option value="">Selecciona</option>
+                        <option>Menos de COP 4.000</option>
+                        <option>COP 4.000 - 6.000</option>
+                        <option>COP 6.000 - 9.000</option>
+                        <option>Más de COP 9.000</option>
+                    </select>
+                    <label>¿Cómo resuelves este problema hoy?</label><select id="f2">
+                        <option value="">Selecciona</option>
+                        <option>Voy yo mismo</option>
+                        <option>App de domicilios</option>
+                        <option>Mensajero en moto</option>
+                        <option>Pido a un familiar o vecino</option>
+                    </select>
+                    <label>¿Qué es lo que MÁS te gusta?</label><input id="f3" type="text"
+                        placeholder="Ej: que sea ecológico">
+                    <label>¿Qué cambiarías?</label><input id="f4" type="text"
+                        placeholder="Ej: poder programar entregas">
+                    <p id="fbErr" class="error"></p>
+                    <button class="btn btn-em" type="submit">Enviar feedback</button>
+                    <button class="btn btn-out" type="button" id="csv"><i class="fa-solid fa-download"></i> Descargar
+                        respuestas (CSV)</button>
+                    <button class="btn btn-out" type="button" id="reset">Reiniciar contadores</button>
+                </form>
+            </div>
+        </div>
+    </section>
+    <section id="problema" class="section">
+        <div class="wrap">
+            <h2 class="title reveal">Pedir algo cerca no debería ser tan difícil</h2>
+            <p class="sub reveal">Hoy faltan entregas locales rápidas y ecológicas. Esto es lo que vemos en el barrio.
+            </p>
+            <div class="grid3">
+                <article class="card reveal"><i class="fa-solid fa-hourglass-half ic red"></i>
+                    <h3>Demoras y tráfico</h3>
+                    <p>Un pedido a pocas cuadras puede tardar mucho por el tráfico y por rutas largas.</p>
+                </article>
+                <article class="card reveal"><i class="fa-solid fa-money-bill-wave ic red"></i>
+                    <h3>Costos y comisiones altas</h3>
+                    <p>Los comercios pequeños pierden margen con plataformas de comisiones elevadas.</p>
+                </article>
+                <article class="card reveal"><i class="fa-solid fa-smog ic red"></i>
+                    <h3>Contaminación</h3>
+                    <p>Entregas cortas en moto o carro suman emisiones y ruido innecesarios.</p>
+                </article>
+            </div>
+        </div>
+    </section>
+    <section id="como" class="section alt">
+        <div class="wrap">
+            <h2 class="title reveal">Cómo funciona en 4 pasos</h2>
+            <div class="steps">
+                <div class="step reveal"><span>1</span>
+                    <h3>Pide</h3>
+                    <p>Escribe qué necesitas y dónde, desde la app o WhatsApp.</p>
+                </div>
+                <div class="step reveal"><span>2</span>
+                    <h3>Asignamos</h3>
+                    <p>La IA elige al bicimensajero más cercano de tu zona.</p>
+                </div>
+                <div class="step reveal"><span>3</span>
+                    <h3>Sigue en vivo</h3>
+                    <p>Ves la ruta y el tiempo estimado en tiempo real.</p>
+                </div>
+                <div class="step reveal"><span>4</span>
+                    <h3>Recibe y califica</h3>
+                    <p>Confirmas la entrega y calificas a tu vecino mensajero.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="cliente" class="section alt">
+        <div class="wrap">
+            <h2 class="title reveal">¿Para quién es Cycle Drop Express?</h2>
+            <p class="sub reveal">Nuestro cliente ideal: el <span class="badge">Consumidor Práctico</span>, que valora
+                el tiempo y la simplicidad.</p>
+            <div class="card persona reveal">
+                <div class="persona-l">
+                    <div class="avatar"><i class="fa-solid fa-user-tie"></i></div>
+                    <h3>Carlos Mendoza</h3>
+                    <p><strong>28 - 35 años</strong><br>Profesional / Analista Senior</p>
+                    <p class="quote">"Busco crecer profesionalmente, pero necesito soluciones flexibles que se adapten a
+                        mi trabajo."</p>
+                </div>
+                <div>
+                    <h4><i class="fa-solid fa-bullseye"></i> Motivaciones</h4>
+                    <ul class="list">
+                        <li>Ahorrar tiempo para dedicarlo a su crecimiento laboral.</li>
+                        <li>Resolver compras y envíos cercanos con un par de toques.</li>
+                        <li>Recibir sus pedidos sin desplazamientos ni trámites.</li>
+                    </ul>
+                    <h4><i class="fa-solid fa-face-frown"></i> Frustraciones</h4>
+                    <ul class="list neg">
+                        <li>Falta de tiempo para salir a hacer mandados.</li>
+                        <li>Servicios lentos, caros o poco transparentes.</li>
+                        <li>No saber dónde está su pedido ni cuánto tardará.</li>
+                    </ul>
+                    <h4><i class="fa-solid fa-mobile-screen"></i> Hábitos digitales</h4>
+                    <ul class="list">
+                        <li>Uso elevado de smartphone, laptop y apps de productividad.</li>
+                        <li>Activo en LinkedIn y plataformas de streaming en su tiempo libre.</li>
+                    </ul>
+                    <h4><i class="fa-solid fa-circle-question"></i> ¿Por qué Consumidor Práctico?</h4>
+                    <p class="muted">Valora la comodidad, la simplicidad y el tiempo. Busca plataformas intuitivas,
+                        disponibles 24/7 y de respuesta rápida.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="tecnologia" class="section dark">
+        <div class="wrap">
+            <h2 class="title reveal">Tecnologías 4.0 detrás de cada entrega</h2>
+            <div class="tabs reveal">
+                <button class="tab active" data-tab="ia"><i class="fa-solid fa-brain"></i> Inteligencia
+                    Artificial</button>
+                <button class="tab" data-tab="cloud"><i class="fa-solid fa-cloud"></i> Cloud Computing</button>
+                <button class="tab" data-tab="data"><i class="fa-solid fa-database"></i> Big Data</button>
+            </div>
+            <div class="panel active" id="ia">
+                <p>La IA empareja cada pedido con el bicimensajero más cercano, calcula la mejor ruta y predice el
+                    tiempo de llegada. Además, un chatbot 24/7 resuelve dudas y da soporte.</p>
+                <div class="chat">
+                    <p class="me">Tú: "Necesito llevar un paquete a dos cuadras."</p>
+                    <p class="bot">Asistente IA: "Hay un bicimensajero a 3 min. Llegada estimada: 18 min."</p>
+                    <p class="bot">Asistente IA: "¡Tu pedido va en camino! Sigue la ruta en vivo."</p>
+                </div>
+            </div>
+            <div class="panel" id="cloud">
+                <p>La nube mantiene la app disponible desde cualquier celular, a cualquier hora, y escala en horas de
+                    alta demanda. El seguimiento en tiempo real se sincroniza al instante.</p>
+                <ul class="chips">
+                    <li>Seguimiento en vivo</li>
+                    <li>Alta disponibilidad</li>
+                    <li>Multidispositivo</li>
+                    <li>Pagos seguros</li>
+                </ul>
+            </div>
+            <div class="panel" id="data">
+                <p>Analizamos zonas, horarios y rutas con más demanda para ubicar mensajeros donde se necesitan y
+                    reducir los tiempos de espera.</p>
+                <ul class="chips">
+                    <li>Zonas de demanda</li>
+                    <li>Horas pico</li>
+                    <li>Rutas óptimas</li>
+                    <li>Calificaciones</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <section id="precios" class="section">
+        <div class="wrap">
+            <h2 class="title reveal">Tarifas simples y justas</h2>
+            <div class="grid3">
+                <article class="card price reveal">
+                    <h3>Por entrega</h3>
+                    <p class="amt">COP 4.900<small> desde</small></p>
+                    <ul>
+                        <li>Pago por uso</li>
+                        <li>Misma zona o barrio</li>
+                        <li>Seguimiento en vivo</li>
+                    </ul><a href="#registro" class="btn btn-out btn-block">Elegir</a>
+                </article>
+                <article class="card price pop reveal"><span class="tag">Más elegido</span>
+                    <h3>Suscripción Barrio</h3>
+                    <p class="amt">COP 29.900<small>/mes</small></p>
+                    <ul>
+                        <li>10 entregas incluidas</li>
+                        <li>Prioridad de asignación</li>
+                        <li>Soporte con chatbot 24/7</li>
+                    </ul><a href="#registro" class="btn btn-em btn-block">Elegir</a>
+                </article>
+                <article class="card price reveal">
+                    <h3>Comercios</h3>
+                    <p class="amt">COP 59.900<small>/mes</small></p>
+                    <ul>
+                        <li>Entregas con tarifa reducida</li>
+                        <li>Panel de pedidos</li>
+                        <li>Sin comisión por venta</li>
+                    </ul><a href="#registro" class="btn btn-out btn-block">Cotizar</a>
+                </article>
+            </div>
+            <p class="center muted">Bono de lanzamiento: 3 entregas gratis + 30% de descuento el primer mes.</p>
+            <div class="table-wrap reveal">
+                <table>
+                    <tr>
+                        <th></th>
+                        <th>Cycle Drop</th>
+                        <th>Apps de domicilios</th>
+                        <th>Mensajería en moto</th>
+                    </tr>
+                    <tr>
+                        <td>Entrega en la misma zona</td>
+                        <td>✅</td>
+                        <td>Variable</td>
+                        <td>✅</td>
+                    </tr>
+                    <tr>
+                        <td>Ecológico</td>
+                        <td>✅</td>
+                        <td>❌</td>
+                        <td>❌</td>
+                    </tr>
+                    <tr>
+                        <td>Comisión baja al comercio</td>
+                        <td>✅</td>
+                        <td>❌</td>
+                        <td>Variable</td>
+                    </tr>
+                    <tr>
+                        <td>Seguimiento en vivo</td>
+                        <td>✅</td>
+                        <td>✅</td>
+                        <td>❌</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </section>
+    <section id="faq" class="section">
+        <div class="wrap narrow">
+            <h2 class="title reveal">Preguntas frecuentes</h2>
+            <div class="acc reveal">
+                <button class="acc-b">¿Qué puedo enviar? <i class="fa-solid fa-plus"></i></button>
+                <div class="acc-p">
+                    <p>Compras de tiendas, comidas, documentos y paquetes pequeños dentro de tu zona.</p>
+                </div>
+                <button class="acc-b">¿Quiénes son los bicimensajeros? <i class="fa-solid fa-plus"></i></button>
+                <div class="acc-p">
+                    <p>Vecinos del barrio verificados y calificados por la comunidad.</p>
+                </div>
+                <button class="acc-b">¿Cuánto tarda una entrega? <i class="fa-solid fa-plus"></i></button>
+                <div class="acc-p">
+                    <p>Dentro de la misma zona, la meta es 30 minutos o menos.</p>
+                </div>
+                <button class="acc-b">¿Cómo se protegen mis datos? <i class="fa-solid fa-plus"></i></button>
+                <div class="acc-p">
+                    <p>Se usan solo para gestionar tu pedido, conforme a la Ley 1581 de 2012.</p>
+                </div>
+                <button class="acc-b">¿Esto es un producto real? <i class="fa-solid fa-plus"></i></button>
+                <div class="acc-p">
+                    <p>Es un prototipo de validación académica; no se realizan cobros.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="cta">
+        <h2>Tu barrio, a la velocidad de una bicicleta</h2><a href="#registro" class="btn btn-white">Reservar mi
+            lugar</a>
+    </section>
+
+    <footer>
+        <div class="wrap foot">
+            <div>
+                <p class="logo"><i class="fa-solid fa-bicycle"></i> Cycle Drop <b>Express</b></p>
+                <p>Entregas locales rápidas, económicas y ecológicas.</p>
+            </div>
+            <div>
+                <p><i class="fa-solid fa-shield-halved"></i> Tus datos se usan solo para informarte del lanzamiento (Ley
+                    1581 de 2012, Habeas Data).</p>
+                <p><i class="fa-solid fa-graduation-cap"></i> <strong>Nota académica:</strong> prototipo de validación
+                    para el ACA de Plan de Negocio (CUN). No es una oferta comercial.</p>
+            </div>
+        </div>
+        <p class="copy">© 2026 Cycle Drop Express. Todos los derechos reservados.</p>
+    </footer>
+    <button id="top" aria-label="Subir"><i class="fa-solid fa-arrow-up"></i></button>
+    <script src="script.js"></script>
+</body>
+
+</html>
